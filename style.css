@@ -5,16 +5,22 @@
 :root {
     --accent: #0056b3;
     --accent-dark: #004494;
+
+    --bg: linear-gradient(180deg, #fafafa, #f2f4f7);
+    --card: #ffffff;
+    --text: #1f1f1f;
+    --muted: #555;
+    --border: #e0e0e0;
 }
 
 .page-home { --accent: #0056b3; }
 .page-work { --accent: #2e8b57; }
 .page-projects { --accent: #6a5acd; }
-.page-skills,
+.page-skills { --accent: #444; }
 .page-about { --accent: #444; }
 
 [data-theme="dark"] {
-    --bg: #0f1115;
+    --bg: linear-gradient(180deg, #0f1115, #0c0e13);
     --card: #161a22;
     --text: #e6e6e6;
     --muted: #a0a0a0;
@@ -26,44 +32,59 @@
    ========================================================= */
 
 body {
-    font-family: system-ui, sans-serif;
-    background: linear-gradient(180deg, #fafafa, #f2f4f7);
-    color: #1f1f1f;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
     max-width: 1000px;
     margin: auto;
     padding: 64px 24px 120px;
     line-height: 1.65;
-    animation: fadeIn 700ms ease-out;
+    animation: fadeIn 600ms ease-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================================================
-   HERO — PARALLAX EFFECT
+   PROFILE HEADER
    ========================================================= */
 
-.hero {
-    background:
-        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)),
-        radial-gradient(circle at top left, var(--accent), transparent 60%);
-    background-attachment: fixed;
-    padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.profile img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    flex-shrink: 0;
+}
+
+.subtitle {
+    color: var(--muted);
 }
 
 /* =========================================================
    NAVIGATION
    ========================================================= */
 
+nav {
+    margin-top: 8px;
+}
+
 nav a {
     color: var(--accent);
-    margin-right: 12px;
+    margin-right: 14px;
     text-decoration: none;
     position: relative;
+    font-weight: 500;
 }
 
 nav a::after {
@@ -82,26 +103,36 @@ nav a:hover::after {
 }
 
 /* =========================================================
+   HERO / TOP SECTION (SUBTLE — NOT FLASHY)
+   ========================================================= */
+
+.page-home .section:first-of-type {
+    background:
+        radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 15%, transparent), transparent 60%),
+        var(--card);
+}
+
+/* =========================================================
    SECTIONS
    ========================================================= */
 
 .section {
-    background: #fff;
+    background: var(--card);
     border-radius: 16px;
     padding: 28px;
     margin-top: 48px;
     box-shadow: 0 14px 32px rgba(0,0,0,0.06);
-    animation: slideUp 600ms ease forwards;
     opacity: 0;
-}
-
-.section:nth-of-type(n) {
-    animation-delay: calc(0.1s * var(--i, 1));
+    animation: slideUp 500ms ease forwards;
 }
 
 @keyframes slideUp {
-    to { opacity: 1; transform: translateY(0); }
-    from { opacity: 0; transform: translateY(16px); }
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.section h2 {
+    margin-top: 0;
 }
 
 /* =========================================================
@@ -111,36 +142,54 @@ nav a:hover::after {
 .page-work .section,
 .page-projects .section {
     position: relative;
-    padding-left: 40px;
+    padding-left: 44px;
 }
 
 .page-work .section::before,
 .page-projects .section::before {
     content: "";
     position: absolute;
-    left: 16px;
-    top: 20px;
-    bottom: 20px;
+    left: 18px;
+    top: 24px;
+    bottom: 24px;
     width: 4px;
     background: linear-gradient(var(--accent), transparent);
     border-radius: 2px;
-}
-
-.page-work h3,
-.page-projects h2 {
-    position: relative;
 }
 
 .page-work h3::before,
 .page-projects h2::before {
     content: "";
     position: absolute;
-    left: -32px;
-    top: 0.6em;
+    left: -34px;
+    top: 0.65em;
     width: 14px;
     height: 14px;
     background: var(--accent);
     border-radius: 50%;
+}
+
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* =========================================================
+   OPEN SOURCE GRAPH
+   ========================================================= */
+
+.contribution-graph {
+    max-width: 100%;
+    margin-top: 16px;
+    border-radius: 12px;
+    background: var(--card);
 }
 
 /* =========================================================
@@ -159,42 +208,47 @@ nav a:hover::after {
 }
 
 .rail-button {
-    padding: 10px 14px;
+    padding: 10px 16px;
     border-radius: 999px;
     border: 1px solid var(--accent);
     color: var(--accent);
-    background: white;
+    background: var(--card);
     text-decoration: none;
-    transition: all 200ms ease;
+    font-weight: 500;
+    transition: all 220ms ease;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
 .rail-button.primary {
     background: var(--accent);
-    color: white;
+    color: #fff;
 }
 
 .rail-button:hover {
     transform: translateX(-6px) scale(1.05);
-    box-shadow: 0 10px 26px rgba(0,0,0,0.15);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.2);
 }
 
 /* =========================================================
-   DARK MODE BUTTON
+   DARK MODE TOGGLE
    ========================================================= */
 
 .theme-toggle {
     position: fixed;
     bottom: 20px;
     right: 22px;
-    border-radius: 50%;
     width: 44px;
     height: 44px;
+    border-radius: 50%;
     border: none;
-    background: white;
+    background: var(--card);
+    color: var(--text);
     box-shadow: 0 10px 24px rgba(0,0,0,0.2);
     cursor: pointer;
+    font-size: 18px;
+    transition: transform 200ms ease;
 }
 
 .theme-toggle:hover {
-    transform: rotate(15deg) scale(1.1);
+    transform: rotate(12deg) scale(1.1);
 }
