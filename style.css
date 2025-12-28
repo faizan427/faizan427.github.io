@@ -1,46 +1,53 @@
 /* ===============================
-   Base Layout & Typography
+   RESET & BASE
 =============================== */
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    max-width: 980px;
+    max-width: 1040px;
     margin: 0 auto;
-    padding: 64px 24px;
+    padding: 72px 24px;
     line-height: 1.65;
     color: #1f2933;
-    background: linear-gradient(180deg, #fafafa 0%, #f2f4f7 100%);
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
 }
 
 /* ===============================
-   Header & Navigation
+   HEADER / HERO
 =============================== */
 
 header {
-    margin-bottom: 64px;
-    animation: fadeSlideUp 0.6s ease-out both;
+    margin-bottom: 72px;
+    animation: fadeSlideUp 0.8s ease-out both;
 }
 
 .profile {
     display: flex;
+    gap: 22px;
     align-items: center;
-    gap: 18px;
 }
 
 .profile img {
-    width: 92px;
-    height: 92px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid #ddd;
+    border: 2px solid #e5e7eb;
+    background: #fff;
 }
 
 h1 {
     margin-bottom: 6px;
+    font-size: 2.1rem;
 }
 
 .subtitle {
-    color: #555;
+    font-size: 1.05rem;
+    color: #475569;
 }
 
 nav {
@@ -48,10 +55,10 @@ nav {
 }
 
 nav a {
-    margin-right: 12px;
+    margin-right: 14px;
     color: #0056b3;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 nav a:hover {
@@ -59,86 +66,93 @@ nav a:hover {
 }
 
 /* ===============================
-   Main Content
+   HERO INTRO CARD
 =============================== */
 
-main > p {
-    max-width: 720px;
-    font-size: 1.05rem;
-    margin-bottom: 48px;
-    line-height: 1.7;
+.hero {
+    background: white;
+    padding: 32px 36px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+    margin-bottom: 56px;
 }
 
 /* ===============================
-   Sections
+   SECTIONS AS CARDS
 =============================== */
 
 .section {
-    padding: 28px 0;
-    border-top: 1px solid #e5e7eb;
-    animation: fadeSlideUp 0.6s ease-out both;
+    background: white;
+    padding: 32px 36px;
+    margin-bottom: 36px;
+    border-radius: 14px;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.05);
+    animation: fadeSlideUp 0.7s ease-out both;
 }
 
-.section:first-of-type {
-    border-top: none;
-}
-
-h2 {
+.section h2 {
     margin-bottom: 14px;
+    font-size: 1.4rem;
     letter-spacing: -0.3px;
+    position: relative;
 }
 
-h3 {
-    margin-top: 20px;
-    margin-bottom: 8px;
+.section h2::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: #2563eb;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+.section p {
+    max-width: 820px;
 }
 
 /* ===============================
-   Buttons & Actions
+   BUTTONS / CTAs
 =============================== */
 
 .actions {
-    margin-top: 22px;
+    margin-top: 24px;
 }
 
 .button {
     display: inline-block;
-    padding: 10px 16px;
-    margin-right: 10px;
-    border-radius: 6px;
-    border: 1px solid #0056b3;
-    color: #0056b3;
+    padding: 12px 18px;
+    margin-right: 12px;
+    border-radius: 8px;
+    border: 1px solid #2563eb;
+    color: #2563eb;
     text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-    transition: background 200ms ease,
-                color 200ms ease,
-                transform 200ms ease,
-                box-shadow 200ms ease;
+    font-weight: 600;
+    transition: all 0.25s ease;
 }
 
 .button.primary {
-    background: #0056b3;
-    color: #ffffff;
+    background: #2563eb;
+    color: white;
 }
 
 .button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
 }
 
 .button.primary:hover {
-    background: #004494;
+    background: #1e40af;
 }
 
 /* ===============================
-   Animations
+   ANIMATIONS
 =============================== */
 
 @keyframes fadeSlideUp {
     from {
         opacity: 0;
-        transform: translateY(6px);
+        transform: translateY(12px);
     }
     to {
         opacity: 1;
@@ -147,25 +161,28 @@ h3 {
 }
 
 /* ===============================
-   Dark Mode (System-Based)
+   DARK MODE
 =============================== */
 
 @media (prefers-color-scheme: dark) {
     body {
-        background: #0f172a;
+        background: linear-gradient(180deg, #020617 0%, #020617 100%);
         color: #e5e7eb;
     }
 
-    .subtitle {
-        color: #9ca3af;
-    }
-
+    .hero,
     .section {
-        border-top-color: #1e293b;
+        background: #020617;
+        box-shadow: 0 18px 36px rgba(0,0,0,0.6);
+        border: 1px solid #1e293b;
     }
 
     nav a {
         color: #93c5fd;
+    }
+
+    .subtitle {
+        color: #cbd5f5;
     }
 
     .button {
@@ -175,6 +192,6 @@ h3 {
 
     .button.primary {
         background: #2563eb;
-        color: #ffffff;
+        color: white;
     }
 }
