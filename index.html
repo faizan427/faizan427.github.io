@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="Qhdnlp1Tqa0nLbnWz0-j9TF0bTgwX2YjVACdJBc4x3E" />
@@ -44,24 +44,28 @@
 
 <main>
 
-    <!-- HERO -->
-    <div class="hero">
-        <p>
+    <!-- HERO (VISUAL PUNCH STARTS HERE) -->
+    <section class="section">
+        <h2 style="font-size:1.4rem; margin-bottom:12px;">
+            Building reliable software for complex engineering systems
+        </h2>
+
+        <p style="font-size:1.05rem;">
             I am a senior software engineer with over four years of experience developing
             high-reliability software systems across automotive and medical domains.
             My work focuses on C++ middleware, Qt/QML-based HMI systems, and
             safety-critical software under industry standards.
         </p>
-    </div>
+    </section>
 
-    <!-- IDENTITY / SEO -->
+    <!-- IDENTITY / SEO SIGNAL -->
     <section class="section">
         <h2>Faizan Feroz – Senior Software Engineer</h2>
         <p>
             Faizan Feroz is a Senior Software Engineer with expertise in C++, Qt,
             power systems, automotive software, and safety-critical engineering.
             This website highlights professional experience, engineering projects,
-            and published research.
+            and published research across industry and academia.
         </p>
     </section>
 
@@ -69,20 +73,19 @@
     <section class="section">
         <h2>Open Source Contributions</h2>
         <p>
-            This graph reflects my open-source contribution activity on GitHub
-            and updates automatically with ongoing development.
+            This graph reflects my open-source contribution activity on GitHub and
+            updates automatically with ongoing development.
         </p>
 
-    <img
-        src="https://raw.githubusercontent.com/faizan427/faizan427/output/contribution.svg"
-        alt="Faizan Feroz – Open Source Contributions"
-        loading="lazy"
-        class="contribution-graph"
-    />
-
+        <img
+            src="https://raw.githubusercontent.com/faizan427/faizan427/output/contribution.svg"
+            alt="Faizan Feroz – Open Source Contributions"
+            loading="lazy"
+            class="contribution-graph"
+        />
     </section>
 
-    <!-- REACH OUT (TEXT ONLY) -->
+    <!-- REACH OUT -->
     <section class="section">
         <h2>Reach Out</h2>
         <p>
@@ -101,6 +104,10 @@
     <a class="rail-button" href="https://github.com/faizan427" target="_blank">GitHub</a>
     <a class="rail-button" href="https://www.linkedin.com/in/faizan-bhat-326592132/" target="_blank">LinkedIn</a>
 </div>
+
+<!-- DARK MODE TOGGLE -->
+<button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+<script src="dark-mode.js"></script>
 
 </body>
 </html>
