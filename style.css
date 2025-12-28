@@ -213,3 +213,10 @@ nav a:hover {
         color: #ffffff;
     }
 }
+.contribution-graph {
+    width: 100%;
+    max-width: 980px;
+    margin: 24px auto 0;
+    display: block;
+}
+
