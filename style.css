@@ -208,8 +208,11 @@ li {
 
 .project-screenshot img {
     width: 100%;
-    border-radius: 10px;
+    max-width: 720px;          /* ✅ controls size */
     display: block;
+    margin: 0 auto;            /* ✅ centers image */
+    border-radius: 10px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
 }
 
 .project-screenshot:hover {
