@@ -1,25 +1,131 @@
+/* ===============================
+   Base Layout & Typography
+   =============================== */
+
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    max-width: 960px;
-    margin: 60px auto;
-    padding: 0 24px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 64px 24px;
     line-height: 1.65;
     color: #1f1f1f;
+
+    /* Classic, subtle background */
+    background: linear-gradient(180deg, #fafafa 0%, #f2f4f7 100%);
+}
+
+/* ===============================
+   Header & Navigation
+   =============================== */
+
+header {
+    margin-bottom: 48px;
+    animation: fadeIn 600ms ease-out both;
 }
 
 h1 {
     margin-bottom: 6px;
 }
 
-p {
-    margin-top: 12px;
+.subtitle {
+    color: #555;
 }
 
-a {
+nav {
+    margin-top: 14px;
+}
+
+nav a {
+    margin-right: 12px;
     color: #0056b3;
     text-decoration: none;
 }
 
-a:hover {
+nav a:hover {
     text-decoration: underline;
+}
+
+/* ===============================
+   Main Content
+   =============================== */
+
+main {
+    animation: slideUp 600ms ease-out both;
+}
+
+p {
+    margin-top: 12px;
+}
+
+/* ===============================
+   Buttons & Actions
+   =============================== */
+
+.actions {
+    margin-top: 22px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 16px;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: 1px solid #0056b3;
+    color: #0056b3;
+    text-decoration: none;
+    transition: background 200ms ease, color 200ms ease, transform 200ms ease;
+}
+
+.button.primary {
+    background: #0056b3;
+    color: #ffffff;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button.primary:hover {
+    background: #004494;
+}
+
+/* ===============================
+   Sections
+   =============================== */
+
+.section {
+    margin-top: 56px;
+    animation: fadeIn 700ms ease-out both;
+}
+
+/* ===============================
+   Profile Header
+   =============================== */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile img {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+/* ===============================
+   Animations
+   =============================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
