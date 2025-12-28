@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Projects | Faizan Feroz</title>
-    <meta name="description" content="Selected engineering and research projects by Faizan Feroz across high-speed rail and metro rail systems.">
+    <meta name="description" content="Selected engineering and research projects by Faizan Feroz across railways, power systems, and optimization software.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,8 +12,8 @@
 <header>
     <h1>Projects</h1>
     <p class="subtitle">
-        Representative software and engineering projects demonstrating
-        system-level development and domain-specific problem solving.
+        Representative engineering and research projects demonstrating
+        system-level software development, optimization, and protocol-based systems.
     </p>
 
     <nav>
@@ -46,31 +46,12 @@
         </p>
 
         <ul>
-            <li>
-                Designed and implemented the front-end and back-end of the
-                application using C++ with the Qt framework.
-            </li>
-            <li>
-                Conducted research and development (R&amp;D) activities for
-                electrical logic design specific to high-speed rail traction
-                power systems.
-            </li>
-            <li>
-                Integrated Octave-based numerical models with the Qt C++
-                application to create a unified analysis workflow.
-            </li>
-            <li>
-                Implemented electrical analysis capabilities including
-                load flow analysis, short-circuit analysis, and harmonics analysis.
-            </li>
-            <li>
-                Designed the software to accept railway timetable data and
-                route-level parameters as inputs for scenario-based analysis.
-            </li>
-            <li>
-                Worked in a Linux-based development environment following
-                structured research, validation, and documentation practices.
-            </li>
+            <li>Designed and implemented the front-end and back-end using C++ and Qt.</li>
+            <li>Performed R&amp;D for electrical logic specific to traction power systems.</li>
+            <li>Integrated Octave-based numerical models with the Qt C++ application.</li>
+            <li>Implemented load flow, short-circuit, and harmonics analysis.</li>
+            <li>Processed railway timetable data and route parameters as inputs.</li>
+            <li>Worked in a Linux-based environment with structured validation practices.</li>
         </ul>
 
         <p>
@@ -80,8 +61,7 @@
 
         <p>
             <strong>Technologies & Domains:</strong>
-            C++, Qt, Octave, Linux, traction power systems,
-            electrical power system analysis
+            C++, Qt, Octave, Linux, traction power systems, electrical power system analysis
         </p>
     </section>
 
@@ -90,34 +70,17 @@
         <h2>Metro Crew Scheduling & Timetabling Optimization System</h2>
 
         <p>
-            This project focused on the development of an optimized crew scheduling
-            and timetabling solution for manned metro operations at Delhi Metro
-            Rail Corporation (DMRC). The objective was to generate efficient
-            operational schedules by applying mathematical modeling techniques
-            to real-world metro constraints.
+            Developed an optimized crew scheduling and timetabling solution for
+            manned metro operations at Delhi Metro Rail Corporation (DMRC),
+            using mathematical modeling and optimization techniques.
         </p>
 
         <ul>
-            <li>
-                Led a technical team of 3–4 members, coordinating development
-                tasks and guiding implementation efforts.
-            </li>
-            <li>
-                Designed and implemented mathematical models for metro crew
-                scheduling and timetable generation.
-            </li>
-            <li>
-                Developed the complete solution using Python in a Linux-based
-                environment.
-            </li>
-            <li>
-                Worked with operational inputs such as timetable data and
-                route parameters to generate optimized crew schedules.
-            </li>
-            <li>
-                Focused on correctness, optimization, and practical applicability
-                of generated schedules for manned metro systems.
-            </li>
+            <li>Led a technical team of 3–4 members during project execution.</li>
+            <li>Designed mathematical models for crew scheduling and timetable generation.</li>
+            <li>Implemented the complete solution using Python in a Linux environment.</li>
+            <li>Generated optimized schedules using timetable and route-level inputs.</li>
+            <li>Focused on correctness, optimization, and operational feasibility.</li>
         </ul>
 
         <p>
@@ -127,9 +90,68 @@
 
         <p>
             <strong>Technologies & Domains:</strong>
-            Python, mathematical modeling and optimization,
-            crew scheduling and timetabling systems,
-            Linux-based development
+            Python, mathematical modeling, optimization algorithms,
+            crew scheduling systems, Linux
+        </p>
+    </section>
+
+    <!-- iCoReader Project -->
+    <section class="section">
+        <h2>COMTRADE-Based Data Acquisition & Visualization Tool (iCoReader)</h2>
+
+        <p>
+            Developed a data acquisition and visualization tool for
+            Distributed Disturbance Recorder (DDR) systems used in power
+            system monitoring applications.
+        </p>
+
+        <ul>
+            <li>Designed and implemented a COMTRADE file reader compliant with IEEE standards.</li>
+            <li>Developed a desktop application named <strong>iCoReader</strong> using C++ and Qt.</li>
+            <li>Parsed, processed, and visualized power system disturbance data.</li>
+            <li>Integrated iCoReader as a new module within the existing iPDC suite.</li>
+            <li>Enhanced data visualization and analysis compared to conventional COMTRADE viewers.</li>
+        </ul>
+
+        <p>
+            <strong>Standards:</strong>
+            IEEE C37.118.1-2013 (COMTRADE)
+        </p>
+
+        <p>
+            <strong>Technologies & Domains:</strong>
+            C++, Qt, COMTRADE, power system monitoring,
+            data acquisition and visualization, Linux
+        </p>
+    </section>
+
+    <!-- iTester Project -->
+    <section class="section">
+        <h2>PMU Connection Tester & Synchrophasor Data Visualization Tool (iTester)</h2>
+
+        <p>
+            Developed a Linux-based desktop application to test and validate
+            Phasor Measurement Unit (PMU) connections using Synchrophasor technology.
+        </p>
+
+        <ul>
+            <li>Developed <strong>iTester</strong>, a PMU connection testing tool using C++ and Qt.</li>
+            <li>Implemented live acquisition of raw PMU data from simulators.</li>
+            <li>Parsed binary data streams according to IEEE synchrophasor standards.</li>
+            <li>Displayed raw hex packets and decoded values in human-readable form.</li>
+            <li>Implemented real-time plots of frequency, magnitude, angle, and analog values.</li>
+            <li>Designed a clear UI with multiple plotting areas and real-time indicators.</li>
+        </ul>
+
+        <p>
+            <strong>Standards:</strong>
+            IEEE C37.118.2-2011 (Synchrophasor Data Transfer)
+        </p>
+
+        <p>
+            <strong>Technologies & Domains:</strong>
+            C++, Qt, Linux, synchrophasor technology,
+            real-time data acquisition, protocol parsing
         </p>
     </section>
 
